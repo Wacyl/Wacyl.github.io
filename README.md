@@ -1,7 +1,6 @@
 # wacyl.github.io
 
-Personal site. Built with Jekyll on GitHub Pages; every push to `main`
-rebuilds the site. No local toolchain is required.
+Personal site. Built with Jekyll on GitHub Pages. Claude Code was used for the HTML/CSS. This README just contains a few instructions and comments in case I forget.
 
 ## Layout
 
@@ -60,8 +59,7 @@ The blog index is generated. `updated: YYYY-MM-DD` in the front matter adds an
 
 ### Math
 
-kramdown uses `$$ ... $$` for both inline and display math; single `$` is not
-recognized.
+kramdown uses `$$ ... $$` for both inline and display math (single `$` doesnt work)
 
 - Inline: `$$H^*(X;\Z)$$`
 - Display: `$$` alone on the lines before and after the formula.
