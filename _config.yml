@@ -1,0 +1,34 @@
+# Jekyll configuration. GitHub Pages reads this file at build time.
+
+title: Wacyl Meddour
+author: Wacyl Meddour
+affiliation: Department of Mathematics, MIT
+description: >-
+  Wacyl Meddour — undergraduate in mathematics at MIT. Algebraic geometry,
+  geometric topology. Papers, notes, and a blog.
+url: "https://wacyl.github.io"
+baseurl: ""
+
+# Post URLs: /blog/<title-slug>/
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+
+# All files in _posts/ use the post layout.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Present in the repository, not published.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

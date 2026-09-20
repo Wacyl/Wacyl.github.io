@@ -1,0 +1,23 @@
+---
+layout: default
+title: Blog
+---
+<p class="affiliation">Blog</p>
+
+{% if site.posts.size > 0 %}
+<ul class="posts">
+{%- for post in site.posts %}
+  <li>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %b %Y' }}</time>
+    <div>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {%- if post.summary %}
+      <p class="summary">{{ post.summary }}</p>
+      {%- endif %}
+    </div>
+  </li>
+{%- endfor %}
+</ul>
+{% else %}
+<p class="muted">Nothing here yet.</p>
+{% endif %}

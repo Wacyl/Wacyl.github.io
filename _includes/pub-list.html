@@ -1,0 +1,27 @@
+{%- comment -%}
+  Renders a list of publication entries (see _data/papers.yml for the fields).
+  Usage: {% include pub-list.html items=site.data.papers %}
+{%- endcomment -%}
+<ul class="pubs">
+{%- for p in include.items %}
+  <li>
+    <span class="title">{{ p.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+    {%- if p.coauthors %} With {{ p.coauthors | markdownify | remove: '<p>' | remove: '</p>' | strip }}.{% endif %}
+    {%- if p.status %} <span class="status">{{ p.status | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>{% endif %}
+    {%- if p.pdf or p.arxiv or p.code or p.doi %}
+    <span class="links">
+      {%- if p.pdf %} <a href="{% if p.pdf contains '://' %}{{ p.pdf }}{% else %}{{ p.pdf | relative_url }}{% endif %}">pdf</a>{% endif %}
+      {%- if p.arxiv %} <a href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>{% endif %}
+      {%- if p.doi %} <a href="https://doi.org/{{ p.doi }}">journal</a>{% endif %}
+      {%- if p.code %} <a href="{{ p.code }}">code</a>{% endif %}
+    </span>
+    {%- endif %}
+    {%- if p.abstract %}
+    <details>
+      <summary>abstract</summary>
+      {{ p.abstract | markdownify }}
+    </details>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>

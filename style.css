@@ -1,0 +1,207 @@
+/* Shared stylesheet. Palette and typefaces are the custom properties in :root;
+   dark mode overrides them under prefers-color-scheme. */
+
+:root {
+  --ink:    #222222;   /* body text */
+  --muted:  #6a6a6a;   /* dates, affiliations, secondary text */
+  --link:   #1a56a0;   /* links */
+  --rule:   #d9d9d9;   /* thin lines */
+  --paper:  #ffffff;   /* page background */
+  --wash:   #f6f6f4;   /* background of theorem boxes, code */
+  --serif:  Charter, "Bitstream Charter", "Iowan Old Style", "Palatino Linotype",
+            Palatino, Georgia, "Times New Roman", serif;
+  --mono:   ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:   #e6e4df;
+    --muted: #9a9892;
+    --link:  #8db4ec;
+    --rule:  #3a3a3a;
+    --paper: #161616;
+    --wash:  #1f1f1e;
+  }
+}
+
+/* ---------- base ---------- */
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 3.25rem 1.25rem 4rem;
+  max-width: 41rem;
+  margin-inline: auto;
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent);
+}
+a:hover { text-decoration-color: var(--link); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+h1 { font-size: 1.75rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; margin-top: 2.6rem; margin-bottom: 0.9rem; }
+h3 { font-size: 1rem;    margin-top: 1.8rem; margin-bottom: 0.5rem; }
+
+p  { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.3rem; margin: 0 0 1rem; }
+li { margin-bottom: 0.35rem; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+code, pre {
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+pre {
+  background: var(--wash);
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  line-height: 1.45;
+}
+
+blockquote {
+  margin: 1.2rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+/* ---------- site header (name + nav) ---------- */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.site-header .name { font-size: 1.75rem; font-weight: 600; text-decoration: none; color: var(--ink); }
+.site-nav a { margin-left: 1.15rem; text-decoration: none; }
+.site-nav a:first-child { margin-left: 0; }
+.site-nav a[aria-current="page"] { text-decoration: underline; }
+.affiliation { color: var(--muted); margin-bottom: 2.2rem; }
+
+/* ---------- publication list (bibliography style) ---------- */
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs > li {
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;      /* hanging indent, like a bibliography */
+  margin-bottom: 1.05rem;
+}
+.pubs .title { font-style: italic; }
+.pubs .status { color: var(--muted); }
+.pubs .links { white-space: nowrap; }
+.pubs .links a { text-decoration: none; }
+.pubs .links a::before { content: "["; color: var(--muted); }
+.pubs .links a::after  { content: "]"; color: var(--muted); }
+
+/* collapsible abstract under an entry */
+.pubs details {
+  text-indent: 0;
+  margin-top: 0.35rem;
+}
+.pubs summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.92em;
+  list-style: none;
+}
+.pubs summary::-webkit-details-marker { display: none; }
+.pubs summary::before { content: "+ "; }
+.pubs details[open] summary::before { content: "\2212  "; }
+.pubs details p {
+  margin: 0.5rem 0 0.4rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rule);
+  font-size: 0.95em;
+}
+
+/* ---------- blog list ---------- */
+
+.posts { list-style: none; padding: 0; margin: 0; }
+.posts li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+.posts time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.posts .summary { color: var(--muted); font-size: 0.95em; margin: 0.1rem 0 0; }
+@media (max-width: 480px) {
+  .posts li { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+
+/* ---------- single post ---------- */
+
+.post-header { margin: 2.2rem 0 2rem; }
+.post-header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.post-meta { color: var(--muted); }
+.post-body h2 { margin-top: 2.2rem; }
+
+/* theorem-style environments (see README for Markdown usage) */
+.thm, .lemma, .prop, .cor, .defn, .remark, .example {
+  margin: 1.2rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--wash);
+  border-radius: 3px;
+}
+.thm > p:last-child, .lemma > p:last-child, .prop > p:last-child,
+.cor > p:last-child, .defn > p:last-child, .remark > p:last-child,
+.example > p:last-child, .proof > p:last-child { margin-bottom: 0; }
+.remark, .example { background: none; padding: 0; border-left: 2px solid var(--rule); padding-left: 1rem; }
+.proof { margin: 1rem 0 1.4rem; }
+p.proof::before, .proof > p:first-child::before { content: "Proof. "; font-style: italic; }
+p.proof::after,  .proof > p:last-child::after  { content: "\25A1"; float: right; }   /* ∎ */
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---------- misc ---------- */
+
+.muted { color: var(--muted); }
+.contact dt { float: left; clear: left; width: 5.5rem; color: var(--muted); }
+.contact dd { margin: 0 0 0.3rem 5.5rem; }
+
+@media print {
+  body { padding: 0; max-width: none; }
+  .site-nav, .site-footer { display: none; }
+  a { color: inherit; text-decoration: none; }
+}

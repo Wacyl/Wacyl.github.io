@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<p class="affiliation">{{ site.affiliation }}</p>
+
+<section id="about">
+{% capture about %}{% include about.md %}{% endcapture %}{{ about | markdownify }}
+</section>
+
+{% if site.data.papers.size > 0 %}
+<h2 id="papers">Papers and preprints</h2>
+{% include pub-list.html items=site.data.papers %}
+{% endif %}
+
+{% if site.data.notes.size > 0 %}
+<h2 id="notes">Notes and expository writing</h2>
+{% include pub-list.html items=site.data.notes %}
+{% endif %}
+
+<h2 id="contact">Contact</h2>
+<dl class="contact">
+  <dt>Email</dt>
+  <dd>meddour[at]mit.edu</dd>
+  <dt>Elsewhere</dt>
+  <dd><a href="https://github.com/Wacyl">GitHub</a></dd>
+</dl>

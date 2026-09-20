@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.summary | default: site.description | strip_newlines }}">
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+
+<!-- MathJax configuration for the whole site. Site-wide macros are defined here. -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath:  [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      tags: 'ams',
+      macros: {
+        Z: '\\mathbb{Z}', Q: '\\mathbb{Q}', R: '\\mathbb{R}', C: '\\mathbb{C}'
+      }
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="name" href="{{ '/' | relative_url }}">{{ site.author }}</a>
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/blog/' | relative_url }}"{% if page.url contains "/blog/" %} aria-current="page"{% endif %}>Blog</a>
+    <a href="{{ '/cv.pdf' | relative_url }}">CV</a>
+  </nav>
+</header>
+
+{{ content }}
+
+<footer class="site-footer">
+  <span>{{ site.author }}</span>
+  <span>{% if page.url == "/" %}Last updated {{ site.time | date: "%B %Y" }}{% else %}<a href="{{ '/' | relative_url }}">Home</a>{% endif %}</span>
+</footer>
+
+</body>
+</html>

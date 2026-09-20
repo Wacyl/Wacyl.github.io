@@ -1,0 +1,28 @@
+# Papers and preprints, newest first.
+#
+# Fields (title is required, the rest optional):
+#   title      ends with a period
+#   coauthors  e.g. "A. Person and B. Person"
+#   status     e.g. "Preprint, 2026." / "Submitted." / "To appear in J." / "J. 12 (2027), 1–30."
+#   pdf        path under papers/ or a full URL
+#   arxiv      arXiv identifier, quoted: '2609.12345'
+#   doi        DOI, e.g. 10.2140/agt.2023.23.1
+#   code       repository URL
+#   abstract   text; the ">" block style allows multiple lines
+#
+# Markdown and math ($$ ... $$) are allowed in every text field.
+# Values containing ": " must be quoted.
+
+- title: Computing surface cobordism maps in Khovanov homology.
+  coauthors: Veronika Moroz
+  status: 'MIT SPUR, summer 2025. Mentor: Mary Stelow.'
+  pdf: https://math.mit.edu/documents/spur/2025Moroz_Meddour.pdf
+  code: https://github.com/Wacyl/Cobordism-induced-maps-on-Khovanov-homology-SPUR-2025-
+  abstract: >
+    We study the maps on Khovanov homology induced by surface cobordisms in the
+    4-ball, with a focus on the Seifert surface cobordism. For positive connected
+    links we describe the image of $$1$$ under the Seifert surface map in terms of
+    the graph of Seifert circles, and for twist knots we determine exactly when this
+    image generates $$\mathrm{Kh}^{0,-1}$$. We also give a SageMath implementation
+    of movie cobordisms that computes the induced chain maps, including the homotopy
+    equivalences for all Reidemeister moves.
