@@ -13,6 +13,12 @@
 # Markdown and math ($$ ... $$) are allowed in every text field.
 # Values containing ": " must be quoted.
 
+- title: Circle-valued Morse theory and Frobenius monodromy.
+  status: 'MIT UROP+, summer 2026. Mentor: Yonghwan Kim.'
+  pdf: https://github.com/Wacyl/Wacyl.github.io/papers/Circle_valued_Morse_theory_and_Frobenius_monodromy.pdf
+  abstract: >
+    Given a closed manifold $M$ and a circle-valued Morse function $f : M \rightarrow S^1$, Hutchings and Lee define a topological invariant $\overline{I}(f) = \overline{\tau}(f)\cdot \overline{\zeta}(f)$ of the homotopy class of $f$ by incorporating data of critical points of $f$ along with orbits. Motivated by Treumann's work on local systems on $S^1$ with Frobenius monodromy, we construct a characteristic $p$ analogue $\overline{I}_k(f)$ valued in the Whitehead group $K_1(\hat R)$, where $\hat R$ is the Frobenius-skew ring of Laurent series over a perfect field $k$. We compute $K_1(\hat R)$ for finite fields and relate our invariant to the Hutchings-Lee invariant, concluding with applications in orbit period-detection. 
+
 - title: Computing surface cobordism maps in Khovanov homology.
   coauthors: Veronika Moroz
   status: 'MIT SPUR, summer 2025. Mentor: Mary Stelow.'
