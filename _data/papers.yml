@@ -13,6 +13,33 @@
 # Markdown and math ($$ ... $$) are allowed in every text field.
 # Values containing ": " must be quoted.
 
+- title: Chiral quantizations of affine schemes.
+  coauthors: Ilya Dumanski
+  status: 'Preprint 2026.'
+  abstract: >
+    Deformation quantizations have been used in the literature as a way
+    of studying Poisson algebras and Poisson varieties, with a chiral analogue seeing
+    recent developments. In this short paper, we show that sheafy chiral quantizations
+    of an affine scheme correspond to chiral quantizations of its global sections.
+  
+
+- title: Field algebras associated with non-symmetric lattices.
+  status: 'MIT UROP 2026. Mentor: Miguel Moreira.'
+  pdf: https://arxiv.org/pdf/2611.18762
+  abstract: > 
+    Field algebras, introduced by Bakalov and Kac, generalize vertex
+    algebras by replacing locality with a weaker associativity-type axiom. We develop
+    the structure theory of field algebras with a view toward geometric examples in
+    which a natural bilinear form fails to be symmetric. We prove a reconstruction
+    theorem for field algebras, producing a field algebra structure from a generating
+    family of fields. We associate to every finite-rank lattice $$L$$ equipped with an
+    arbitrary bilinear form a canonical field algebra $$V_L$$, generalizing the Heisenberg
+    and lattice vertex algebras. We then study potential definitions of commutants
+    in this setting and analyze when they are realized as subfield algebras. Finally,
+    we realize these constructions geometrically by looking at the homology of the
+    moduli stack of complexes of quiver representations, extending previous results
+    from Dominic Joyce.
+
 - title: Circle-valued Morse theory and Frobenius monodromy.
   status: 'MIT UROP+, summer 2026. Mentor: Yonghwan Kim.'
   pdf: https://wacyl.github.io/papers/Circle_valued_Morse_theory_and_Frobenius_monodromy.pdf
