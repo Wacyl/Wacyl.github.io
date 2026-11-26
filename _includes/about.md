@@ -1,1 +1,1 @@
-I am a senior in mathematics at MIT. I am interested in algebraic geometry and geometric topology.
+Hello! My name is Wacyl Meddour and I am currently a senior studying Mathematics (and artificial intelligence) at MIT. My main interests are algebraic geometry, geometric topology and geometric representation theory. 
